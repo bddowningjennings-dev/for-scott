@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  text-align: center;
+  background-color: rgb(202, 235, 222);
+  display: flex;
+  justify-content: center;
+}
+#container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  margin: 10px;
+  width: 100px;
+}
+#fileuploader {
+  width: 450px;
+  background-color: rgb(200, 224, 215);
+}
+textarea {
+  margin: 10px;
+  padding: 10px;
+}
+.photo {
+  max-width: 30%;
+  margin: 20px;
+}
+.title {
+  font-size: 17px;
+  font-weight: bold;
+}
+#photobox > p {
+  
+}
