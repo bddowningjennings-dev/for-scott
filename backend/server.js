@@ -1,6 +1,6 @@
 const
   PORT = process.env.PORT || 8000,
-  DATABASE = 'for-scott'
+  DATABASE = 'for-scott2'
   bodyParser = require('body-parser'),
   session = require('express-session');
   cors = require('cors'),

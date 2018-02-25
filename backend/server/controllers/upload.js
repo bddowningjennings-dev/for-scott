@@ -1,4 +1,5 @@
 const
+  mailer = require('../controllers/mail'),
   mongoose = require('mongoose'),
   Upload = require('../models/uploads')
 
@@ -10,16 +11,25 @@ class UploadController {
     })
   }
   create(req, res) {
-    let photos = [], photos_long = []
+    let photos = [], photos_long = [], attachments = []
+    let html = `<p>${ req.session.userid }</p><p>${req.body.msg}</p>`    
     for (let file of req.files) {
-      photos_long.push(__dirname + file.path)
+      photos_long.push(__dirname + '/../../' + file.path)
       photos.push('uploads/' + file.filename)
+      attachments.push({
+          filename: file.filename,
+          path: __dirname + '/../../' + file.path,
+          cid: file.filename
+      })
+      html += `<p><img style="width:500px" src="cid:${file.filename}"/></p>`
     }
     req.body.photos = photos
     req.body.photos_long = photos_long
     req.body.user = req.session.userid
     Upload.create(req.body, (err, upload) => {
       if (err) return res.json(err)
+      let body = { html, attachments }
+      mailer('somahdasauce@gmail.com', body)
       return res.redirect('/dash')
     })
   }

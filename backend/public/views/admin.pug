@@ -4,15 +4,15 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    link(rel="stylesheet", href="dashboard.css")
+    link(rel="stylesheet", href="admin.css")
     title for-scott
   body
-    h1 connected to admin
-    ul
-      each user in users
-        li #{user.email}
+    #header #[.header_item ] #[.header_item #[a(href="/logout") #[button#logout.header(type="submit") Logout]]]
+    h1 admin
+    each user in users
+      h2 #{user.email}
         each upload in user.uploads
-          p #{upload.msg}
+          p #[span.msg #{upload.msg}]
           each photo in upload.photos
             img.photo(src=photo)
         

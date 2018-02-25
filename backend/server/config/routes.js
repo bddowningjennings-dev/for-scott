@@ -18,6 +18,4 @@ module.exports = (app, upload) => {
   app.get('/admin', isLoggedIn, User.admin)
 }
 
-const isLoggedIn = (req, res, next) => {
-  req.session.userid ? next() : res.redirect('/')
-}
+const isLoggedIn = (req, res, next) => req.session.userid ? next() : res.redirect('/')

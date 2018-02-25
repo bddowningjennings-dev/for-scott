@@ -7,8 +7,9 @@ html(lang="en")
     link(rel="stylesheet", href="dashboard.css")
     title for-scott
   body
+    #header #[.header_item ] #[.header_item #[a(href="/logout") #[button#logout.header(type="submit") Logout]]]
     #container
-      h1 connected with email: #{user}
+      h1 #{user}
       form(action="/uploads", method="POST", enctype='multipart/form-data')
         textarea(name="msg", cols="60", rows="8", placeholder="Add Description")
         input#fileuploader(type="file", accept="image", name="photos", multiple)
@@ -18,3 +19,4 @@ html(lang="en")
           p #[span.title Description:] #{upload.msg}
           each photo in upload.photos
             img.photo(src=photo)
+    //- script(src="/script.js")
