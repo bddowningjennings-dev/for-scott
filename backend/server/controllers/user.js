@@ -34,7 +34,7 @@ class UserController {
     })
   }
   admin(req, res) {
-    const adminEmails = ['admin@godzilla.dogbutt']
+    const adminEmails = []
     let html = ''
     let attachments = []
     User.findOne({ _id: req.session.userid }, (err, user) => {

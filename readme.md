@@ -1,4 +1,4 @@
-# thing
+# thing MVP
 
 ### **address =>** http://13.56.254.11
 
@@ -13,7 +13,7 @@
 
 ### admin ( http://13.56.254.11/admin )
 - has access to all of the uploads grouped and organized by email and date
-- can only be accessed if email matches hard-coded admin emal : currently **admin@godzilla.dogbutt**
+- can only be accessed if email matches hard-coded admin emal : currently **removed**
 
 
 ## back end
